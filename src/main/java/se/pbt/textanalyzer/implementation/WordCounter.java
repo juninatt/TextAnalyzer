@@ -8,6 +8,8 @@ import se.pbt.textanalyzer.spi.TextAnalyzer;
 public class WordCounter implements TextAnalyzer {
     @Override
     public int analyze(String text) {
+        if (text == null || text.trim().isEmpty())
+            return 0;
         return text.split("\\s+").length;
     }
 }
