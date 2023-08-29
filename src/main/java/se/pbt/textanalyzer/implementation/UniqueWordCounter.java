@@ -28,15 +28,11 @@ public class UniqueWordCounter implements TextAnalyzer {
      */
     @Override
     public int analyze(String text) {
-        if (text == null || text.trim().isEmpty()) {
+        var optText = Optional.ofNullable(text).map(String::trim);
+        if (optText.filter(t -> !t.isEmpty()).isEmpty()) {
             return 0;
         }
-
-        Set<String> uniqueWords = new HashSet<>();
-        for (String word : text.trim().split("\\s+")) {
-            uniqueWords.add(word);
-        }
-        return uniqueWords.size();
+        return optText.get().split("\\s+").length;
     }
 }
 
