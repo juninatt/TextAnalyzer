@@ -1,12 +1,14 @@
-target/
+# Binary and Executable Files
+*.exe
+*.class
+
+# Maven Wrapper Files and Directories
 !.mvn/wrapper/maven-wrapper.jar
 maven-wrapper.jar
 maven-wrapper.properties
 mvnw
 mvnw.cmd
-
-!**/src/main/**/target/
-!**/src/test/**/target/
+target/
 
 ### STS ###
 .apt_generated
