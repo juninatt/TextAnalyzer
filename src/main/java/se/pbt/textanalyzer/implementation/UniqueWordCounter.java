@@ -4,7 +4,9 @@ package se.pbt.textanalyzer.implementation;
 import se.pbt.textanalyzer.annotations.TextAnalyzerLabel;
 import se.pbt.textanalyzer.spi.TextAnalyzer;
 
-import java.util.Optional;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Implementation of {@link TextAnalyzer} that counts the number of unique words in a given text.
@@ -33,9 +35,8 @@ public class UniqueWordCounter implements TextAnalyzer {
         }
 
         Set<String> uniqueWords = new HashSet<>();
-        for (String word : text.trim().split("\\s+")) {
-            uniqueWords.add(word);
-        }
+        Collections.addAll(uniqueWords, text.trim()
+                .split("\\s+"));
         return uniqueWords.size();
     }
 }
