@@ -1,2 +1,3 @@
 se.pbt.textanalyzer.implementation.WordCounter
 se.pbt.textanalyzer.implementation.UniqueWordCounter
+se.pbt.textanalyzer.implementation.PalindromeCounter
